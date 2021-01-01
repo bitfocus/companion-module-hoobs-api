@@ -1,0 +1,24 @@
+{
+  "name": "hoobs-api",
+  "version": "1.0.0",
+  "api_version": "1.0.0",
+  "keywords": [
+    "HomeBridge"
+  ],
+  "manufacturer": "HOOBS Inc.",
+  "product": "HOOBS",
+  "shortname": "hoobs",
+  "description": "HomeBridge Out Of the Box (HOOBS) module for Companion",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johnny Estilles <johnny@estilles.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.16.0"
+  },
+  "dependencies": {
+    "nanoid": "^3.1.20"
+  }
+}
