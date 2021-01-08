@@ -9,7 +9,6 @@ module.exports = {
         this.TEMPERATURE_MIN = 154;
         this.TEMPERATURE_MAX = 370;
 
-        this.defineConst('DEFAULT_HOST', 'hoobs.local');
         this.defineConst('DEFAULT_PORT', 80)
 
         this.defineConst('BRIGHTNESS_MIN', 1);

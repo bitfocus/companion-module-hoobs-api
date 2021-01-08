@@ -1,14 +1,15 @@
 module.exports = {
     config_fields() {
         return [
-            {
-                type: 'textinput',
-                id: 'host',
-                label: `1HOOBS Domain Name (Default: ${this.DEFAULT_HOST})`,
-                width: 6,
-                default: this.DEFAULT_HOST,
-                required: true,
-            },
+			{
+				type: 'textinput',
+				id: 'ip',
+				label: 'HOOBS Host IP Address',
+				width: 12,
+				regex: this.REGEX_IP,
+				default: '192.168.1.1',
+				required: true,
+			},
             {
                 type: 'textinput',
                 id: 'port',

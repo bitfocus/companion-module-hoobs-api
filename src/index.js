@@ -1,6 +1,6 @@
 const instance_skel = require('../../../instance_skel');
 
-const { Http } = require('./utils');
+const { Http } = require('./http');
 const { HoobsController } = require('./controller');
 
 const actions = require('./actions');
@@ -39,7 +39,7 @@ class HoobsInstance extends instance_skel {
     }
 
     initHoobs() {
-        if (this.config.host && this.config.port) {
+        if (this.config.ip && this.config.port) {
             this.status(this.STATUS_UNKNOWN, 'Connecting ...');
             this.controller.getAccessories()
                 .then(accessories => {
@@ -48,11 +48,10 @@ class HoobsInstance extends instance_skel {
                     this.status(this.STATUS_OK);
                 })
                 .catch(({ error }) => {
-                    this.log('error', error);
-                    this.status(this.STATUS_ERROR, error);
+                    this.logMessage({ level: 'error', message: error }, this.STATUS_ERROR)
                 });
         } else {
-            this.logMessage({ level: 'warn', message: 'Configuration is missing host or port' }, this.STATUS_ERROR);
+            this.logMessage({ level: 'warn', message: 'Unable to connect to HOOBS, please check configuration.' }, this.STATUS_ERROR);
         }
 
     }

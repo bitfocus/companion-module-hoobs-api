@@ -42,14 +42,14 @@ class HoobsController {
     broadcast(channel, message) {
         if (this.subscriptions[channel]) {
             Object.keys(this.subscriptions[channel]).forEach(subscription => {
-                this.subscriptions[channel][subscription].apply(null, [message]);
+                this.subscriptions[channel][subscription].call(null, message);
             });
         }
     }
 
     updateConfig(config) {
         this.config = config;
-        this.baseUrl = `http://${this.config.host}:${this.config.port}/api`;
+        this.baseUrl = `http://${this.config.ip}:${this.config.port}/api`;
         this.token = false;
     }
 
