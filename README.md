@@ -9,7 +9,7 @@ While you can use an existing HOOBS user to configure **companion-module-hoobs-a
 
 To configure this module you will need:
 
-1. The hostname of your HOOBS instance (usually `hoobs.local`)
+1. The IP of your HOOBS instance
 1. The TCP port of your HOOBS instance (usuall 80)
 1. A set of credentials (username and password) to access your HOOBS instance.
 
