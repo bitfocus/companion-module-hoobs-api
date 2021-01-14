@@ -3,15 +3,7 @@
 This module provides control over smart home accessories registered with a local [HOOBS](https://hoobs.org/) instance. HOOBS is based on Homebridge. Homebridge is a lightweight NodeJS server that emulates the iOS HomeKit API. Homebridge allows you to integrate with smart home devices that do not support the HomeKit protocol.
 
 ## Configuration
-While you can use an existing HOOBS user to configure **companion-module-hoobs-api**, we suggest creating a new user for exclusive use with this module with the mininum permissions possible. 
-
-> The HOOBS user used with this module DOES NOT require terminal access.
-
-To configure this module you will need:
-
-1. The IP of your HOOBS instance
-1. The TCP port of your HOOBS instance (usuall 80)
-1. A set of credentials (username and password) to access your HOOBS instance.
+See [HELP.md](HELP.md)
 
 ## Supported Version
 The module supports and has been tested with the latest HOOBS version.
