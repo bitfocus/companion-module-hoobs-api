@@ -1,5 +1,5 @@
-import InstanceSkel = require('../../../instance_skel')
-import { CompanionConfigField, CompanionSystem } from '../../../instance_skel_types'
+import InstanceSkel from '../../../instance_skel';
+import { CompanionConfigField, CompanionSystem } from '../../../instance_skel_types';
 
 import { HttpService } from './http';
 import { Accessory, HoobsController } from './controller';
@@ -37,7 +37,7 @@ class ControllerInstance extends InstanceSkel<DeviceConfig> {
     config_fields(): CompanionConfigField[] {
         return GetConfigFields(this.REGEX_IP)
     }
-    
+
     destroy(): void {
         this.controller.destroy();
     }
@@ -49,13 +49,13 @@ class ControllerInstance extends InstanceSkel<DeviceConfig> {
                 .then(accessories => {
                     this.accessories = accessories;
 
-                    this.setActions(GetActionsList((() => ({ 
+                    this.setActions(GetActionsList((() => ({
                         accessories: this.accessories,
                         log: this.log,
                         running: this.running,
                         controller: this.controller,
                     }))));
-                    
+
                     this.status(this.STATUS_OK);
                 })
                 .catch(({ error }) => {

@@ -18,7 +18,7 @@ export function GetActionsList(getState: GetStateFunction): CompanionActions {
 	const callback = ({ action, options }: CompanionActionEvent) => {
 		const { accessories, running, log, controller } = getState();
 
-		if (running) {
+		if (!running) {
 			log('warn', `[${action.toUpperCase()}] action received before instance was ready`);
 			return;
 		}
