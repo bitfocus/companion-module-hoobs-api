@@ -1,24 +1,35 @@
 {
-  "name": "hoobs-api",
-  "version": "1.0.0",
-  "api_version": "1.0.0",
-  "keywords": [
-    "HomeBridge"
-  ],
-  "manufacturer": "HOOBS Inc.",
-  "product": "HOOBS",
-  "shortname": "hoobs",
-  "description": "HomeBridge Out Of the Box (HOOBS) module for Companion",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Johnny Estilles <johnny@estilles.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.16.0"
-  },
-  "dependencies": {
-    "nanoid": "^3.1.20"
-  }
+	"name": "hoobs-api",
+	"version": "1.0.0",
+	"api_version": "1.0.0",
+	"keywords": [
+		"HomeBridge"
+	],
+	"manufacturer": "HOOBS Inc.",
+	"product": "HOOBS",
+	"shortname": "hoobs",
+	"description": "HomeBridge Out Of the Box (HOOBS) module for Companion",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "rimraf dist && yarn build:main",
+		"build:main": "tsc -p tsconfig.json",
+		"build:watch": "tsc -p tsconfig.json --watch",
+		"lint": "eslint . --ext .ts",
+		"postinstall": "yarn build"
+	},
+	"author": "Johnny Estilles <johnny@estilles.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.13.0",
+		"@typescript-eslint/parser": "^4.13.0",
+		"eslint": "^7.16.0",
+		"eslint-config-prettier": "^7.1.0",
+		"eslint-plugin-prettier": "^3.3.1",
+		"prettier": "^2.2.1",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.1.3"
+	},
+	"dependencies": {
+		"nanoid": "^3.1.20"
+	}
 }
